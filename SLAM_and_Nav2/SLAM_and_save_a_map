@@ -1,0 +1,8 @@
+SLAM และเก็บ Map
+ros2 launch nav2_map_server map_saver_cli -f maps/${map_name} # เป็นการ Save Map จากการ SLAM
+ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=${maps_directory}/${map_name}
+---
+*** หาก map ไม่ขึ้นให้ปิดแล้วเปิดใหม่  *** 
+1. ให้ทำการสร้าง 2D initial pose ก่อนเพื่อหาตำแหน่งหุ่นที่แท้จริงแล้วค่อย Navigate pose # หากไม่รู้ว่าหุ่นอยู่ตำแหน่งให้เลือกตำแหน่งที่ใกล้เคียงที่สุด หุ่นจะปรับให้เข้ากับ Map เอง
+2. Navigate pose
+3. Dynamic avoidance นั้นจำเป็นมากในกรณีที่มี unexpected obstacle หุ่นจะขยับหนีเองแล้วหา path ใหม่
