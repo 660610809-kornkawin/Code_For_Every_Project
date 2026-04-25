@@ -184,25 +184,3 @@ void loop() {
       break;
   }
 }
-
-
-// ============================================================
-//  วิธีใช้งาน
-// ─────────────────────────────────────────────────────────────
-//  1. รัน micro-ros agent:
-//     ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0 -b 115200
-//
-//  2. รัน teleop บนคอม:
-//     ros2 run teleop_twist_keyboard teleop_twist_keyboard
-//     (กด i=ไปหน้า, k=หยุด, ,=ถอย, j=ซ้าย, l=ขวา)
-//
-//  3. ตรวจสอบว่าได้รับ cmd_vel:
-//     ros2 topic echo /cmd_vel
-// ─────────────────────────────────────────────────────────────
-//  สิ่งที่ต้องทำต่อสำหรับ SLAM:
-//  [ ] เพิ่ม Encoder → คำนวณ odometry
-//  [ ] publish /odom (nav_msgs/Odometry)
-//  [ ] publish /tf (odom → base_link)
-//  [ ] ต่อ LiDAR → publish /scan
-//  [ ] รัน slam_toolbox บนคอม
-// ============================================================
